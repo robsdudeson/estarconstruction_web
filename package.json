@@ -1,0 +1,28 @@
+{
+	"name" : "www_estarconstruction_net",
+	"version" : "0.0.1",
+	"description" : "www_estarconstruction_net",
+	"main" : "www_estarconstruction_net-app.js",
+	"scripts" : { 
+		"test" : "echo \"Error: no tests specified! configure package.json\" && exit 1"
+	},
+	"repository" : { "url" : "https://code.robsdudeson.com/svn/www_estarconstruction_net" },
+	"keywords" : [
+		"nodejs"
+	],
+	"author" : "robs dudeson",
+	"license" : "MIT",
+	"readmeFilename" : "readme.md",
+	"dependencies" : {
+		"express" : "latest",
+		"body-parser" : "latest",
+		"marko" : "latest",
+		"pug" : "latest",
+		"nodemailer" : "latest",
+		"validator" : "latest",
+		"bootstrap-material-design" : "latest"
+	},
+	"devDependencies" : {
+		"less" : "latest"
+	}
+}
