@@ -46,7 +46,7 @@ app.post('/', function(req, res){
             // setup e-mail data with unicode symbols
             var mailOptions = {
                 from: '"no-reply" <no-reply@estarconstruction.net>', // sender address
-                to: 'estarconstructionlls@gmail.com', // list of receivers
+                to: 'estarconstructionllc@gmail.com', // list of receivers
                 subject: nameEscaped + ' - Contact from www.estarconstruction.net', // Subject line
                 text: 'Name: ' + nameEscaped + '\n' +
                 'Email: ' + emailNormalizd + '\n' +
