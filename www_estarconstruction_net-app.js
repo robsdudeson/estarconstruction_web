@@ -33,8 +33,6 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.post('/', function(req, res){
 
-	console.dir(req.body);
-	
     if (validator.isNumeric(req.body.human) &&
         req.body.human == 5 &&
         validator.isEmail(req.body.email)){
