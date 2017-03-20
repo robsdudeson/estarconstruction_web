@@ -69,35 +69,43 @@ app.post('/', function(req, res){
 });
 
 app.get('/spec_home', function(req, res){
-	res.sendFile(landingHtmlPath);
+	//res.sendFile(landingHtmlPath);
+	res.redirect('/#whatWeDo');
 });
 
 app.get('/custom_home', function(req, res){
-	res.sendFile(landingHtmlPath);
+	//res.sendFile(landingHtmlPath);
+	res.redirect('/#whatWeDo');
 });
 
 app.get('/renovations', function(req, res){
-	res.sendFile(landingHtmlPath);
+	//res.sendFile(landingHtmlPath);
+	res.redirect('/#whatWeDo');
 });
 
 app.get('/framing', function(req, res){
-	res.sendFile(landingHtmlPath);
+	//res.sendFile(landingHtmlPath);
+	res.redirect('/#whatWeDo');
 });
 
 app.get('/concrete', function(req, res){
-	res.sendFile(landingHtmlPath);
+	//res.sendFile(landingHtmlPath);
+	res.redirect('/#whatWeDo');
 });
 
 app.get('/new_home_circleville', function(req, res){
-	res.sendFile(landingHtmlPath);
+	//res.sendFile(landingHtmlPath);
+	res.redirect('/#Projects');
 });
 
 app.get('/man_cave', function(req, res){
-	res.sendFile(landingHtmlPath);
+	//res.sendFile(landingHtmlPath);
+	res.redirect('/#Projects');
 });
 
 app.get('/flatwork', function(req, res){
-	res.sendFile(landingHtmlPath);
+	//res.sendFile(landingHtmlPath);
+	res.redirect('/#Projects');
 });
 
 //The 404 Route (ALWAYS Keep this as the last route)
