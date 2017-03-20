@@ -27,6 +27,49 @@ app.get('/', function(req, res){
 	res.sendFile(indexHtmlPath);
 });
 
+var nodemailer = require('nodemailer');
+var validator = require('validator');
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
+app.post('/', function(req, res){
+
+	console.dir(req.body);
+	
+    if (validator.isNumeric(req.body.human) &&
+        req.body.human == 5 &&
+        validator.isEmail(req.body.email)){
+
+            var nameEscaped = validator.escape(req.body.name);
+            var emailNormalizd = validator.normalizeEmail(req.body.email, {lowercase: true});
+            var messageEscaped = validator.escape(req.body.message);
+
+            // setup e-mail data with unicode symbols
+            var mailOptions = {
+                from: '"no-reply" <no-reply@estarconstruction.net>', // sender address
+                to: 'estarconstructionlls@gmail.com', // list of receivers
+                subject: nameEscaped + ' - Contact from www.estarconstruction.net', // Subject line
+                text: 'Name: ' + nameEscaped + '\n' +
+                'Email: ' + emailNormalizd + '\n' +
+                'Message:\n' + messageEscaped
+            };
+            
+        	// create reusable transporter object using the default SMTP transport
+        	var transporter = nodemailer.createTransport('smtps://estarconstructionllc%40gmail.com:atexaoakvnbsutkt@smtp.gmail.com');
+
+            // send mail with defined transport object
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    return console.log(error);
+                }
+                console.log('Message sent: ' + info.response);
+            });
+        }
+    else {
+            console.log('didn\'t send mail');
+    }
+    res.redirect('/');
+});
+
 app.get('/spec_home', function(req, res){
 	res.sendFile(landingHtmlPath);
 });
